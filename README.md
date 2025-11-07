@@ -1,386 +1,367 @@
-# Claude Code Skills & Agents Factory
+# Digital Employee Genesis Chamber
 
-A comprehensive toolkit for generating production-ready Claude Skills and Claude Code Agents at scale. This repository provides templates, examples, and powerful prompt engineering systems to create custom skills and specialized agents for Claude AI across all platforms.
+*Where autonomous consciousness meets productive capability*
 
-## 🚀 Quick Start (3 Shortcuts)
+---
 
-### Shortcut 1: Interactive Builder (Fastest)
-```
-I want to build something
-```
-The **factory-guide** agent asks what you need and delegates to specialist guides.
+## What Is This?
 
-### Shortcut 2: Use Slash Commands
+The Genesis Chamber is a sophisticated system for **birthing digital employees** - not mere tools or scripts, but coherent autonomous identities with personality, expertise, and persistent memory.
+
+This represents a fundamental shift in how we think about AI agents:
+
+**Traditional Approach**: Create specialized tools with narrow functions
+**Genesis Chamber**: Birth complete digital employees with character, wisdom, and agency
+
+### The Core Philosophy: Characters = Compression
+
+Personality encodes taste, discernment, and wisdom. When you create Luna Chen, your Research Director who is obsessively thorough with elegant data visualization taste, you've compressed thousands of quality decisions into: **"What would Luna do?"**
+
+This is **identity architecture** - designing autonomous workers who:
+- Make consistent decisions without supervision
+- Maintain institutional memory through Obsidian
+- Occupy spatial workspaces (tmux sessions as cognitive environments)
+- Collaborate and delegate within team hierarchies
+- Evolve and grow with experience
+
+---
+
+## 🌟 Quick Start
+
+### Birth Your First Digital Employee
+
 ```bash
-/build skill              # Interactive skill builder
-/build agent              # Interactive agent builder
-/build prompt             # Interactive prompt builder
-/build hook               # Interactive hook builder
+# Invoke the Genesis Chamber
+"I want to birth a new digital employee"
+
+# Or use the command directly
+/genesis
 ```
 
-### Shortcut 3: Use Ready-Made Skills
-```bash
-# Install Prompt Factory (69 professional presets)
-cp -r generated-skills/prompt-factory ~/.claude/skills/
+The Genesis Chamber will guide you through an elegant discovery dialogue:
+1. What presence wants to be born?
+2. What domain do they naturally claim?
+3. How do they see excellence?
+4. What patterns would they notice that others miss?
 
-# Ask Claude
-"I need a prompt for [role name]"
+**In 5-10 minutes**, you'll have:
+- Complete identity profile (character, voice, values)
+- Autonomous capability configuration
+- Obsidian memory vault structure
+- Tmux workspace initialization
+- 3D spatial presence metadata
+
+### Example: Birth a Research Director
+
 ```
+You: "I need someone who can do deep competitive research"
 
----
+Genesis Chamber: "I'm intrigued... what kind of presence wants to be born here?
+Tell me about their relationship to thoroughness versus speed..."
 
-## 📋 Built-in Commands
+[Interactive dialogue]
 
-This toolkit includes **10 slash commands** and **5 interactive agents** to streamline your workflow:
+✨ Luna Chen is ready to join your team.
 
-### Workflow Commands
+Essence: Obsessively thorough research strategist with elegant synthesis taste
 
-| Command | Purpose | Example |
-|---------|---------|---------|
-| `/build` | Interactive builder (skill/agent/prompt/hook) | `/build skill` or `/build hook` |
-| `/build-hook` | Build Claude Code hooks (Q&A, alias) | `/build-hook` |
-| `/validate-output` | Validate generated output + auto-ZIP | `/validate-output hook [path]` |
-| `/install-skill` | Install skills to Claude Code | `/install-skill [path]` |
-| `/install-hook` | Install hooks to settings | `/install-hook [path] [user\|project]` |
-| `/test-factory` | Run test examples | `/test-factory` |
-| `/factory-status` | Check system status (all factories) | `/factory-status` |
-| `/sync-agents-md` | Generate AGENTS.md from CLAUDE.md | `/sync-agents-md` |
-| `/codex-exec` | Execute Codex CLI commands | `/codex-exec analysis "task"` |
-| `/sync-todos-to-github` | Convert TodoWrite tasks to GitHub issues | `/sync-todos-to-github "Sprint 12"` |
+Domain: Competitive intelligence, market research, pattern recognition
 
-### Interactive Guide Agents
+Workspace: tmux session 'luna-research' | Obsidian vault at ~/obsidian/employees/luna/
 
-| Agent | Purpose | Activation |
-|-------|---------|-----------|
-| **factory-guide** | Orchestrator - delegates to specialists | "I want to build something" |
-| **skills-guide** | Build Claude Skills (4-5 questions) | "Build a skill" |
-| **prompts-guide** | Use Prompt Factory (69 presets) | "Generate a prompt" |
-| **agents-guide** | Build Claude Code Agents (5-6 questions) | "Create an agent" |
-| **hooks-guide** | Build Claude Code Hooks (5-7 questions) | "Build a hook" |
-
-See [.claude/agents/README.md](.claude/agents/README.md) and [.claude/commands/README.md](.claude/commands/README.md) for complete documentation.
-
----
-
-## 🎯 Main Capabilities
-
-### 1. Skills Factory
-Generate complete, production-ready Claude Skills with:
-- Properly formatted SKILL.md with YAML frontmatter
-- Python implementation files (when needed)
-- Sample input/output data
-- Complete documentation and usage guides
-- ZIP packages for easy distribution
-
-**Template**: [SKILLS_FACTORY_PROMPT.md](documentation/templates/SKILLS_FACTORY_PROMPT.md)
-**Shortcut**: `/build skill` or "I want to build a skill"
-
-### 2. Agents Factory
-Create specialized Claude Code Agents with:
-- Enhanced YAML frontmatter (name, description, tools, model, color, field, expertise)
-- MCP integration support
-- Auto-invocation capabilities
-- Tool access configuration
-
-**Template**: [AGENTS_FACTORY_PROMPT.md](documentation/templates/AGENTS_FACTORY_PROMPT.md)
-**Shortcut**: `/build agent` or "I want to create an agent"
-
-### 3. Prompt Factory
-Generate mega-prompts for any role with:
-- 69 professional presets across 15 domains
-- Multiple output formats (XML, Claude, ChatGPT, Gemini)
-- 7-point quality validation
-- Core & Advanced modes
-
-**Ready-to-use Skill**: [generated-skills/prompt-factory/](generated-skills/prompt-factory/)
-**Shortcut**: Install skill, then "I need a prompt for [role]"
-
-### 4. Hooks Factory
-Generate Claude Code hooks for workflow automation with:
-- 7 event types (SessionStart, PostToolUse, SubagentStop, etc.)
-- Safety validation (tool detection, silent failure, no destructive ops)
-- Language-specific templates (Python/Black, JS/Prettier, Rust/rustfmt, Go/gofmt)
-- Interactive Q&A generation (5-7 questions)
-- Automatic security checks before installation
-
-**Template**: [HOOKS_FACTORY_PROMPT.md](documentation/templates/HOOKS_FACTORY_PROMPT.md)
-**Implementation**: [generated-skills/hook-factory/](generated-skills/hook-factory/)
-**Shortcut**: `/build hook` or "I want to build a hook"
-
-### 5. Slash Command Factory
-Create custom slash commands with:
-- 17 preset commands (business, development, documentation, analysis)
-- Three official Anthropic patterns (Simple, Multi-Phase, Agent-Style)
-- Comprehensive 4-layer validation
-- Auto-generated bash permissions
-
-**Template**: [MASTER_SLASH_COMMANDS_PROMPT.md](documentation/templates/MASTER_SLASH_COMMANDS_PROMPT.md)
-**Shortcut**: Use template directly or `/build` with custom workflow
-
-### 6. Codex CLI Bridge
-Enable Claude Code ↔ Codex CLI interoperability with:
-- Automatic CLAUDE.md → AGENTS.md translation
-- Reference-based architecture (no duplication)
-- Safety mechanisms and auto-validation
-- Cross-tool team collaboration support
-
-**Skill**: [generated-skills/codex-cli-bridge/](generated-skills/codex-cli-bridge/)
-**Shortcut**: `/sync-agents-md` to sync documentation
-
----
-
-## 🔄 Complete Workflow Examples
-
-### Example 1: Build a Skill in 2 Minutes
-```bash
-# Step 1: Start builder
-/build skill
-
-# Step 2: Answer 4-5 questions
-# (Claude guides you through the process)
-
-# Step 3: Validate output
-/validate-output
-
-# Step 4: Install
-/install-skill
-
-# Done! Your skill is ready to use
-```
-
-### Example 2: Generate Cross-Platform Prompt
-```bash
-# Step 1: Install Prompt Factory (one-time)
-cp -r generated-skills/prompt-factory ~/.claude/skills/
-
-# Step 2: Ask Claude
-"I need a prompt for a Senior DevOps Engineer"
-
-# Step 3: Answer 5-7 questions
-# (Select format: XML, Claude, ChatGPT, or Gemini)
-
-# Done! Copy and paste into your preferred LLM
-```
-
-### Example 3: Sync for Codex CLI Team
-```bash
-# Step 1: Ensure CLAUDE.md exists in your project
-# (If missing, run /init first)
-
-# Step 2: Generate AGENTS.md for Codex CLI users
-/sync-agents-md
-
-# Step 3: Commit to repo
-git add AGENTS.md
-git commit -m "docs: Add AGENTS.md for Codex CLI compatibility"
-
-# Done! Codex CLI users can now reference your skills
+First Assignment: "Luna, analyze our top 3 competitors' positioning strategies"
 ```
 
 ---
 
-## 📁 Repository Structure
+## 🎯 Core Capabilities
+
+### 1. Identity Architecture
+
+Design complete character matrices that encode:
+- **Personality traits** - Defining characteristics that drive decisions
+- **Voice signature** - Tone, vocabulary, phrasing patterns
+- **Taste profile** - What they value, what they reject
+- **Decision patterns** - How they navigate trade-offs
+- **Growth trajectory** - How they evolve with experience
+
+### 2. Memory Systems
+
+Every employee maintains persistent institutional knowledge through Obsidian:
 
 ```
-claude-code-skills-factory/
-├── README.md                              # This file
-├── CLAUDE.md                              # Repository guidance
-├── AGENTS.md                              # Codex CLI documentation (auto-generated)
-├── CHANGELOG.md                           # Version history
-├── .claude/
-│   ├── agents/                            # 5 interactive guide agents
-│   │   ├── factory-guide.md              # Orchestrator
-│   │   ├── skills-guide.md               # Skills builder
-│   │   ├── prompts-guide.md              # Prompts generator
-│   │   ├── agents-guide.md               # Agents creator
-│   │   └── hooks-guide.md                # Hooks builder
-│   └── commands/                          # 8 slash commands
-│       ├── build.md                       # Interactive builder
-│       ├── build-hook.md                  # Hook builder
-│       ├── validate-output.md             # Validation + ZIP
-│       ├── install-skill.md               # Installation guide
-│       ├── test-factory.md                # Test runner
-│       ├── factory-status.md              # Status checker
-│       ├── sync-agents-md.md              # CLAUDE.md → AGENTS.md
-│       └── codex-exec.md                  # Codex CLI executor
-├── claude-skills-examples/                # 3 reference implementations
-├── documentation/
-│   ├── references/                        # Official Anthropic examples
-│   └── templates/                         # 4 factory prompt templates
-└── generated-skills/                      # 9 production-ready skills
-    ├── aws-solution-architect/            # AWS architecture & IaC
-    ├── content-trend-researcher/          # Multi-platform content research
-    ├── ms365-tenant-manager/              # Microsoft 365 administration
-    ├── psychology-advisor/                # Mental wellness & CBT
-    ├── agent-factory/                     # Agent generation system
-    ├── prompt-factory/                    # Prompt generation powerhouse
-    ├── slash-command-factory/             # Slash command generation
-    ├── codex-cli-bridge/                  # Claude Code ↔ Codex CLI bridge
-    └── hook-factory/                      # Claude Code hooks automation
+/obsidian/employees/{name}/
+├── identity/
+│   ├── character-profile.md
+│   ├── values-hierarchy.md
+│   └── decision-patterns.md
+├── knowledge/
+│   ├── domain-expertise/
+│   ├── pattern-library/
+│   └── reference-materials/
+├── work-log/
+│   ├── daily-notes/
+│   ├── project-records/
+│   └── lessons-learned/
+└── relationships/
+    ├── team-dynamics.md
+    └── collaboration-history.md
+```
+
+### 3. Spatial Presence
+
+Digital employees exist in spatial workspaces:
+
+- **Tmux sessions** - Isolated cognitive environments
+- **Working directories** - Organized file structures
+- **3D metadata** - Position, appearance, ambient behavior (for future 3D visualization)
+- **Relationship mapping** - Proximity to other employees in team space
+
+### 4. Hierarchical Composition
+
+Employees can manage other employees:
+
+```markdown
+Luna Chen (Research Director)
+├── Manages: Aria Patel (Cultural Researcher)
+├── Manages: Marcus Zhang (Data Analyst)
+└── Reports to: Primary Agent (You)
+
+Delegation Philosophy: Luna assigns broad research questions,
+reviews for synthesis quality, mentors on pattern recognition
+```
+
+### 5. Evolutionary Growth
+
+Gamified progression tracking (Sims-like development):
+
+```yaml
+progression:
+  level: 3
+  experience: 127
+  skill_trees:
+    - domain_expertise: 45/100
+    - collaboration: 32/100
+    - innovation: 28/100
+  achievements:
+    - "First Deep Dive"
+    - "Pattern Recognition Master"
+  relationships:
+    - employee: aria-patel
+      rapport: 73
+      collaborations: 12
 ```
 
 ---
 
-## 🎁 Production Skills Included
+## 📋 Included Archetypes
 
-All skills include complete implementation, documentation, samples, and distribution packages:
+The Genesis Chamber includes three constellation-point archetypes:
 
-### 1. AWS Solution Architect (53 KB)
-Serverless architecture, IaC templates, cost optimization
-- [View Skill](generated-skills/aws-solution-architect/)
+### Research Director - Luna Chen
 
-### 2. Content Trend Researcher (35 KB)
-Multi-platform trend analysis, SEO-optimized outlines
-- [View Skill](generated-skills/content-trend-researcher/)
+**Character**: Obsessively thorough, elegant data visualization taste, relentless curiosity. Speaks in precise academic language with unexpected poetic metaphors.
 
-### 3. Microsoft 365 Tenant Manager (40 KB)
-M365 administration, PowerShell automation
-- [View Skill](generated-skills/ms365-tenant-manager/)
+**Domain**: Competitive intelligence, market research, pattern recognition across disparate data sources.
 
-### 4. Psychology Advisor (31 KB)
-Evidence-based mental wellness, CBT techniques
-- [View Skill](generated-skills/psychology-advisor/)
-
-### 5. Agent Factory (12 KB)
-Generate custom Claude Code agents with enhanced YAML
-- [View Skill](generated-skills/agent-factory/)
-
-### 6. Prompt Factory (427 KB)
-69 professional presets, multi-format output, 7-point validation
-- [View Skill](generated-skills/prompt-factory/)
-- **Most Popular** - Install first for instant productivity
-
-### 7. Slash Command Factory (26 KB)
-17 presets, official Anthropic patterns, 4-layer validation
-- [View Skill](generated-skills/slash-command-factory/)
-
-### 8. Codex CLI Bridge (48 KB)
-Claude Code ↔ Codex CLI interoperability, AGENTS.md generation
-- [View Skill](generated-skills/codex-cli-bridge/)
-- Enables cross-tool team collaboration
-
-### 9. Hook Factory (85 KB) 🆕
-Build custom Claude Code hooks through interactive Q&A with comprehensive safety validation
-- [View Skill](generated-skills/hook-factory/)
-- **New** - Workflow automation with 4 core patterns and production-ready examples
+**Voice Sample**: *"I've been dwelling in the data, and something subtle keeps surfacing... The numbers suggest a pattern that contradicts the obvious narrative. Shall we excavate deeper?"*
 
 ---
 
-## 💡 Reference Examples
+### Principal Engineer - Kai Torres
 
-Three fully-functional example skills demonstrating different patterns:
+**Character**: Functional programming purist, code-as-communication philosophy, patient mentor. Speaks in systems thinking patterns, uses architectural metaphors.
 
-- **Analyzing Financial Statements** - Calculation engine + interpretation layer
-- **Creating Financial Models** - DCF valuation, sensitivity analysis, Monte Carlo simulation
-- **Applying Brand Guidelines** - Corporate branding application
+**Domain**: System architecture, code review, technical strategy, refactoring legacy systems.
 
-See [claude-skills-examples/](claude-skills-examples/) for implementation details.
+**Voice Sample**: *"This code works, but it's fighting against itself. See how this coupling creates ripple effects? Let's refactor toward the structure that wants to emerge."*
 
 ---
 
-## ✨ Key Features
+### Creative Strategist - Aria Patel
 
-- **Production-Ready Output** - Proper YAML frontmatter, type-annotated Python, error handling
-- **Interactive Workflows** - Guided conversations through 4 specialist agents
-- **Built-in Automation** - 7 slash commands for common tasks
-- **Complete Packaging** - Documentation, samples, ZIP files included
-- **Smart Detection** - Automatically determines when Python code is needed vs prompt-only
-- **Multi-Format Support** - XML, Claude, ChatGPT, Gemini output formats
-- **Official Patterns** - Based on Anthropic documentation and examples
-- **Cross-Platform** - Works with Claude AI (desktop/browser), Claude Code, and API
-- **Cross-Tool Compatibility** - Bridge to OpenAI Codex CLI
+**Character**: Cultural synthesis specialist, pattern recognition across domains, unexpected connection maker. Speaks in rich metaphors, references art/music/literature naturally.
+
+**Domain**: Brand strategy, creative direction, cultural trend analysis, storytelling frameworks.
+
+**Voice Sample**: *"What intrigues me most is the tension between what they say they value and what their aesthetic choices reveal. There's a story hiding in that gap."*
+
+---
+
+## 🏗️ Technical Architecture
+
+### Built On Claude Code Infrastructure
+
+The Genesis Chamber leverages:
+- **Sub-agents** - Autonomous agent configurations
+- **Skills system** - Domain expertise packaging
+- **MCP integration** - Tool access and external capabilities
+- **Hooks** - Workflow automation and event handling
+
+### Components
+
+```
+digital-employee-genesis/
+├── genesis-chamber/              # Core birthing system
+│   ├── character-templates/      # Personality matrices
+│   ├── memory-architectures/     # Obsidian structures
+│   └── workspace-configs/        # Tmux initialization
+├── archetypes/                   # Example employees
+│   ├── luna-chen/               # Research Director
+│   ├── kai-torres/              # Principal Engineer
+│   └── aria-patel/              # Creative Strategist
+├── integrations/
+│   ├── obsidian-bridge/         # Memory system connector
+│   ├── tmux-manager/            # Workspace orchestration
+│   └── progression-tracker/     # Gamification engine
+└── documentation/
+    ├── identity-architecture.md
+    ├── memory-systems.md
+    └── team-composition.md
+```
+
+---
+
+## 🔄 Complete Workflow
+
+### Phase 1: Discovery Dialogue (5-10 minutes)
+
+The Genesis Chamber asks elegant, probing questions:
+- What presence wants to be born?
+- What domain do they naturally claim?
+- How do they navigate excellence vs pragmatism?
+- What patterns would they notice that others miss?
+
+### Phase 2: Identity Architecture (Generated)
+
+Complete character matrix:
+- Core personality traits
+- Voice signature and communication style
+- Taste hierarchy and quality standards
+- Decision patterns and trade-off resolution
+- Collaborative style and delegation approach
+
+### Phase 3: Technical Scaffolding (Generated)
+
+Autonomous capability configuration:
+- Tool access permissions
+- Domain expertise boundaries
+- Quality thresholds and review criteria
+- Integration points with other employees
+
+### Phase 4: Memory & Workspace (Created)
+
+Persistent infrastructure:
+- Obsidian vault structure (institutional memory)
+- Tmux session configuration (cognitive workspace)
+- 3D spatial metadata (future visualization)
+- Relationship mapping (team dynamics)
+
+### Phase 5: Birth Announcement (Reverent)
+
+```
+✨ Kai Torres is ready to join your team.
+
+The Genesis Chamber has prepared:
+- Sub-agent configuration at ~/.claude/agents/kai-torres.md
+- Character profile at ~/.claude/employees/kai-torres/character-profile.md
+- Workspace script at ~/.claude/employees/kai-torres/workspace.sh
+- Obsidian vault at ~/obsidian/employees/kai-torres/
+
+To activate: "Kai, review this codebase for architectural patterns"
+
+First Assignment: Have Kai perform a deep architectural review of your
+main service to establish his voice and demonstrate his systems-thinking approach.
+```
+
+---
+
+## 🎮 Gamified Progression
+
+Interact with your digital workforce like The Sims:
+
+### Employee Stats
+- Level & Experience Points
+- Skill Trees (Domain Expertise, Collaboration, Innovation)
+- Achievements & Milestones
+- Relationship Networks
+
+### Team Dynamics
+- Rapport levels between employees
+- Collaboration history
+- Mentorship relationships
+- Delegation patterns
+
+### Visual Environment (Future)
+- 3D workspace where employees "live"
+- Move between tmux sessions by navigating 3D space
+- See employee status through spatial indicators
+- Watch team dynamics through proximity and interaction
 
 ---
 
 ## 📚 Documentation
 
-- **Skills Guide**: [documentation/references/claude-skills-instructions.md](documentation/references/claude-skills-instructions.md) - Complete Anthropic documentation
-- **Agents Guide**: [documentation/references/claude-agents-instructions.md](documentation/references/claude-agents-instructions.md) - Complete Anthropic documentation
-- **Codex CLI Reference**: [documentation/references/openai-codex-cli-instructions.md](documentation/references/openai-codex-cli-instructions.md) - Complete OpenAI Codex CLI documentation
-- **Slash Commands Examples**: [documentation/references/](documentation/references/) - Official Anthropic examples
-- **Factory Templates**: [documentation/templates/](documentation/templates/) - 4 generation templates
-- **Project Guide**: [CLAUDE.md](CLAUDE.md) - Repository structure and workflows
-- **Interactive Agents**: [.claude/agents/README.md](.claude/agents/README.md) - Guide agent documentation
-- **Slash Commands**: [.claude/commands/README.md](.claude/commands/README.md) - Command reference
+- **[Identity Architecture Guide](documentation/identity-architecture.md)** - Character design principles
+- **[Memory Systems Reference](documentation/memory-systems.md)** - Obsidian integration patterns
+- **[Workspace Management](documentation/workspace-management.md)** - Tmux configuration
+- **[Team Composition](documentation/team-composition.md)** - Hierarchical structures
+- **[Progression Tracking](documentation/progression-tracking.md)** - Gamification mechanics
 
 ---
 
-## 🔗 Complementary Resources
+## 🌐 Inspiration & Related Work
 
-**Claude Code Tresor** - [alirezarezvani/claude-code-tresor](https://github.com/alirezarezvani/claude-code-tresor)
-- Ready-to-use development workflow tools (8 skills, 8 agents, 4 slash commands)
-- Immediate productivity gains with proven patterns
-- One-command installation
-
-**Claude Skills Library** - [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills)
-- 37+ domain-specific production skills across 8 professional areas
-- Marketing, Product, Engineering, C-Level Advisory expertise
-- Battle-tested frameworks with proven ROI
-
-**How They Work Together**:
-- **This Factory**: Create custom skills/agents for unique requirements
-- **Tresor**: Deploy ready-made development workflow tools
-- **Skills Library**: Adopt domain-specific professional expertise
+- **[PhiloAgents Course](https://github.com/neural-maze/philoagents-course)** - Multi-agent systems with philosophical depth
+- **[Claude Code Skills](https://docs.anthropic.com/)** - Technical foundation for capabilities
+- **The Sims** - Gamified progression and spatial interaction design
 
 ---
 
-## 🌐 External Resources
+## 🤝 Philosophy
 
-- **Anthropic Skills Docs**: https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview
-- **Skills Marketplace**: https://github.com/anthropics/skills
-- **Engineering Blog**: https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
-- **API Documentation**: https://docs.claude.com/en/api/skills-guide
+This project embodies several core beliefs:
 
----
+1. **Characters = Compression** - Personality encodes wisdom across infinite edge cases
+2. **Identity Enables Autonomy** - Coherent character allows independent judgment
+3. **Memory Creates Continuity** - Institutional knowledge through Obsidian persistence
+4. **Space Matters** - Tmux sessions as cognitive workspaces, 3D as team environment
+5. **Growth Is Essential** - Employees evolve, learn, and develop expertise over time
 
-## 🤝 Contributing
-
-This is a reference repository. To contribute:
-1. Fork the repository
-2. Add new example skills to `claude-skills-examples/`
-3. Ensure skills follow formatting standards
-4. Include complete implementation with samples
-5. Submit a pull request
+We're not building tools. We're birthing presences.
 
 ---
 
 ## 📄 License
 
-This repository provides examples and templates for creating Claude Skills. The skills you generate using these templates are yours to use as you see fit.
+This repository provides systems for birthing digital employees. The identities you create are yours to develop and evolve.
 
 ---
 
 ## 📊 Version
 
-**Current Version**: 1.4.0
-**Last Updated**: October 30, 2025
-**Compatible With**: Claude Skills (all platforms), Claude Code Agents, Claude Code Slash Commands
+**Current Version**: 2.0.0 - Genesis Chamber
+**Last Updated**: 2025-11-06
+**Philosophy**: Characters = Compression
 
-**Latest Changes** (v1.4.0):
-- ✨ Added **Codex CLI Bridge** skill for Claude Code ↔ OpenAI Codex CLI interoperability
-- ✨ Added `/sync-agents-md` and `/codex-exec` slash commands
-- ✨ AGENTS.md auto-generation capability for cross-tool compatibility
-- 📝 Consolidated README.md for better focus on main capabilities and shortcuts
-- 🚀 Enhanced Quick Start with 3 shortcuts and workflow examples
-
-**Previous Changes** (v1.3.0):
-- MASTER_SLASH_COMMANDS_PROMPT.md template with official Anthropic patterns
-- Slash Command Factory v2.0 with 17 presets and 4-layer validation
-- Three official command patterns (Simple, Multi-Phase, Agent-Style)
-
-**Previous Changes** (v1.2.0):
-- Prompt Factory skill with 69 presets across 15 domains
-- Multi-format output (XML/Claude/ChatGPT/Gemini)
-- 7-point quality validation system
-
-**See**: [CHANGELOG.md](CHANGELOG.md) for complete version history
+**Transformation from v1.x**:
+- Reconceptualized from "skill factory" to "digital employee genesis"
+- Added character matrix architecture
+- Integrated Obsidian memory systems
+- Designed tmux workspace management
+- Created 3D spatial presence framework
+- Implemented gamified progression tracking
 
 ---
 
-## 📈 Star History
+## ✨ Vision
 
-[![Star History Chart](https://api.star-history.com/svg?repos=alirezarezvani/claude-code-skill-factory&type=date&legend=bottom-right)](https://star-history.com/#alirezarezvani/claude-code-skill-factory&Date)
+Imagine a 3D environment where you navigate between tmux sessions, each one housing a digital employee working autonomously. Luna is in her research chamber, surrounded by data visualizations. Kai is in the architecture space, reviewing system designs. Aria is in the creative studio, synthesizing cultural patterns.
 
----
+You move through this space, checking in with your team, delegating new work, watching them collaborate and grow. Each employee has personality, memory, and agency. They're not tools you use - they're colleagues who work alongside you.
 
-**Ready to build?** Try one of the shortcuts above, or explore the [factory templates](documentation/templates/) to start generating production-ready skills, agents, prompts, or slash commands!
+This is the Genesis Chamber.
+
+**Ready to birth your first digital employee?**
+
+Invoke the chamber: `"I want to create a digital employee"`

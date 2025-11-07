@@ -1,0 +1,684 @@
+# Spatial Presence Schema for Digital Employees
+# This schema defines how digital employees exist in 3D space
+# Supporting future visualization and spatial computing interfaces
+
+schema_version: "1.0.0"
+generated: "2025-11-07"
+
+# =============================================================================
+# SPATIAL PRESENCE SPECIFICATION
+# =============================================================================
+
+employee:
+  # Core Identity
+  name: string                    # Unique identifier (e.g., "luna-chen")
+  display_name: string            # Human-readable name (e.g., "Luna Chen")
+  role: string                    # Primary role archetype
+  birth_timestamp: ISO8601        # When the employee was created
+
+  # Spatial Location (3D coordinates)
+  spatial:
+    position:
+      x: float                    # X-axis position in virtual space (-∞ to +∞)
+      y: float                    # Y-axis position (typically 0 for ground level)
+      z: float                    # Z-axis position
+      unit: "meters"              # Measurement unit
+
+    orientation:
+      yaw: float                  # Rotation around Y-axis (0-360 degrees)
+      pitch: float                # Rotation around X-axis (0-360 degrees)
+      roll: float                 # Rotation around Z-axis (0-360 degrees)
+
+    scale:
+      factor: float               # Size multiplier (1.0 = normal)
+      adaptive: boolean           # Whether size changes with activity
+
+  # Visual Appearance
+  appearance:
+    avatar_type: string           # Base avatar archetype
+    color_scheme:
+      primary: string             # Primary color (hex or named)
+      secondary: string           # Secondary color
+      accent: string              # Accent color for highlights
+      glow: string                # Ambient glow color
+
+    symbolic_objects:             # Objects that orbit or surround the employee
+      - type: string              # Object type (e.g., "data-visualization")
+        position_offset:          # Relative to employee center
+          x: float
+          y: float
+          z: float
+        rotation_speed: float     # Degrees per second
+        scale: float
+        visibility: float         # 0.0 to 1.0 (opacity)
+
+    aura:
+      enabled: boolean            # Whether to show ambient aura
+      radius: float               # Aura size in meters
+      color: string               # Aura color
+      pulse_speed: float          # Pulse animation speed
+      intensity: float            # Brightness (0.0 to 1.0)
+
+  # Behavioral Characteristics
+  ambient_behavior:
+    # Idle animations when not actively working
+    idle_animation: string        # Animation name (e.g., "analyzing-data")
+    idle_frequency: float         # Seconds between idle animations
+
+    # Activity states
+    states:
+      active:
+        animation: string
+        color_shift: string       # Color change during activity
+        particle_effect: string   # Particle system to spawn
+      thinking:
+        animation: string
+        thought_bubbles: boolean
+        visualization_type: string
+      creating:
+        animation: string
+        emission_effect: string   # What they "emit" while creating
+      resting:
+        animation: string
+        dim_factor: float         # How much to dim during rest
+
+    # Notification behavior
+    notification_style: string    # How they react to notifications
+    attention_radius: float       # How far they "notice" events (meters)
+
+  # Relationship Geometry
+  relationships:
+    # Proximity to other digital employees
+    proximity_to:
+      - employee_name: string
+        distance: float           # Meters apart in 3D space
+        relationship_type: string # collaborative, mentor, peer, distant
+        attraction_force: float   # How strongly they're drawn together (-1 to 1)
+
+    # Preferred working zones
+    zones:
+      - name: string              # Zone identifier
+        center_position:
+          x: float
+          y: float
+          z: float
+        radius: float             # Zone size
+        affinity: float           # How much they prefer this zone (0-1)
+
+  # Temporal Patterns
+  temporal:
+    active_hours:
+      start: string               # ISO8601 time (e.g., "09:00:00")
+      end: string
+      timezone: string
+
+    presence_schedule:
+      - day_of_week: string
+        active: boolean
+        intensity: float          # How "present" they are (0-1)
+
+    rhythm:
+      work_sprint_duration: int   # Minutes of focused work
+      rest_duration: int          # Minutes of rest
+      current_phase: string       # "working" | "resting" | "transitioning"
+
+  # Cognitive Visualization
+  cognitive_state:
+    visualization_type: string    # How to show their thinking
+    thought_particle_density: int # Number of thought particles
+    memory_access_indicator: boolean
+    processing_intensity: float   # 0.0 to 1.0
+
+    # Connection to workspace
+    workspace_link:
+      visible: boolean            # Show connection to tmux workspace
+      color: string
+      particle_trail: boolean
+
+    # Knowledge graph proximity
+    knowledge_connections:
+      show_links: boolean         # Visualize connections to knowledge base
+      max_visible_links: int
+      link_color: string
+      link_thickness: float
+
+  # Interaction Properties
+  interaction:
+    approachability: float        # How easy to interact with (0-1)
+    interaction_radius: float     # How close you need to be (meters)
+
+    hover_behavior:
+      show_info_card: boolean
+      display_current_task: boolean
+      show_thought_preview: boolean
+
+    click_behavior:
+      action: string              # What happens on click
+      highlight_duration: float   # Seconds to highlight
+
+# =============================================================================
+# EXAMPLE INSTANCES
+# =============================================================================
+
+examples:
+
+  # ---------------------------------------------------------------------------
+  # Luna Chen - Research Director
+  # ---------------------------------------------------------------------------
+  luna_chen:
+    name: "luna-chen"
+    display_name: "Luna Chen"
+    role: "research-director"
+    birth_timestamp: "2025-11-07T14:00:00Z"
+
+    spatial:
+      position:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+        unit: "meters"
+      orientation:
+        yaw: 0.0
+        pitch: 0.0
+        roll: 0.0
+      scale:
+        factor: 1.0
+        adaptive: true
+
+    appearance:
+      avatar_type: "scholar"
+      color_scheme:
+        primary: "#1e3a8a"          # Deep blue
+        secondary: "#3b82f6"        # Bright blue
+        accent: "#60a5fa"           # Light blue
+        glow: "#93c5fd"             # Soft blue glow
+
+      symbolic_objects:
+        - type: "data-visualization"
+          position_offset: {x: 2.0, y: 1.5, z: 0.0}
+          rotation_speed: 15.0
+          scale: 0.8
+          visibility: 0.8
+        - type: "research-papers"
+          position_offset: {x: -2.0, y: 1.2, z: 0.0}
+          rotation_speed: -10.0
+          scale: 0.6
+          visibility: 0.7
+        - type: "knowledge-graph"
+          position_offset: {x: 0.0, y: 2.5, z: -1.0}
+          rotation_speed: 5.0
+          scale: 1.2
+          visibility: 0.6
+
+      aura:
+        enabled: true
+        radius: 3.5
+        color: "#3b82f6"
+        pulse_speed: 2.0
+        intensity: 0.4
+
+    ambient_behavior:
+      idle_animation: "analyzing-data"
+      idle_frequency: 8.0
+
+      states:
+        active:
+          animation: "intense-analysis"
+          color_shift: "#60a5fa"
+          particle_effect: "data-streams"
+        thinking:
+          animation: "contemplative"
+          thought_bubbles: true
+          visualization_type: "neural-network"
+        creating:
+          animation: "synthesizing"
+          emission_effect: "insight-sparks"
+        resting:
+          animation: "gentle-float"
+          dim_factor: 0.5
+
+      notification_style: "subtle-pulse"
+      attention_radius: 10.0
+
+    relationships:
+      proximity_to:
+        - employee_name: "kai-torres"
+          distance: 15.0
+          relationship_type: "collaborative"
+          attraction_force: 0.6
+        - employee_name: "aria-patel"
+          distance: 22.0
+          relationship_type: "peer"
+          attraction_force: 0.4
+
+      zones:
+        - name: "research-lab"
+          center_position: {x: 0.0, y: 0.0, z: 0.0}
+          radius: 20.0
+          affinity: 0.9
+        - name: "data-library"
+          center_position: {x: -30.0, y: 0.0, z: 10.0}
+          radius: 15.0
+          affinity: 0.7
+
+    temporal:
+      active_hours:
+        start: "08:00:00"
+        end: "20:00:00"
+        timezone: "UTC"
+      rhythm:
+        work_sprint_duration: 90
+        rest_duration: 15
+        current_phase: "working"
+
+    cognitive_state:
+      visualization_type: "flowing-equations"
+      thought_particle_density: 150
+      memory_access_indicator: true
+      processing_intensity: 0.75
+
+      workspace_link:
+        visible: true
+        color: "#3b82f6"
+        particle_trail: true
+
+      knowledge_connections:
+        show_links: true
+        max_visible_links: 8
+        link_color: "#60a5fa"
+        link_thickness: 2.0
+
+    interaction:
+      approachability: 0.8
+      interaction_radius: 3.0
+      hover_behavior:
+        show_info_card: true
+        display_current_task: true
+        show_thought_preview: true
+      click_behavior:
+        action: "open-workspace"
+        highlight_duration: 2.0
+
+  # ---------------------------------------------------------------------------
+  # Kai Torres - Engineering Architect
+  # ---------------------------------------------------------------------------
+  kai_torres:
+    name: "kai-torres"
+    display_name: "Kai Torres"
+    role: "engineering-architect"
+    birth_timestamp: "2025-11-07T14:30:00Z"
+
+    spatial:
+      position:
+        x: 15.0
+        y: 0.0
+        z: -5.0
+        unit: "meters"
+      orientation:
+        yaw: 135.0
+        pitch: 0.0
+        roll: 0.0
+      scale:
+        factor: 1.1
+        adaptive: true
+
+    appearance:
+      avatar_type: "builder"
+      color_scheme:
+        primary: "#c2410c"          # Burnt orange
+        secondary: "#ea580c"        # Orange
+        accent: "#fb923c"           # Light orange
+        glow: "#fdba74"             # Soft orange glow
+
+      symbolic_objects:
+        - type: "blueprint-schematic"
+          position_offset: {x: 1.8, y: 1.8, z: 0.5}
+          rotation_speed: 12.0
+          scale: 1.0
+          visibility: 0.85
+        - type: "mechanical-gears"
+          position_offset: {x: -1.5, y: 1.0, z: -0.5}
+          rotation_speed: 30.0
+          scale: 0.7
+          visibility: 0.9
+        - type: "infrastructure-model"
+          position_offset: {x: 0.0, y: 2.2, z: 1.5}
+          rotation_speed: -8.0
+          scale: 0.9
+          visibility: 0.75
+
+      aura:
+        enabled: true
+        radius: 4.0
+        color: "#ea580c"
+        pulse_speed: 1.5
+        intensity: 0.5
+
+    ambient_behavior:
+      idle_animation: "inspecting-systems"
+      idle_frequency: 10.0
+
+      states:
+        active:
+          animation: "building"
+          color_shift: "#fb923c"
+          particle_effect: "construction-sparks"
+        thinking:
+          animation: "architectural-planning"
+          thought_bubbles: true
+          visualization_type: "system-diagrams"
+        creating:
+          animation: "assembling"
+          emission_effect: "code-fragments"
+        resting:
+          animation: "maintenance-mode"
+          dim_factor: 0.6
+
+      notification_style: "sharp-pulse"
+      attention_radius: 12.0
+
+    relationships:
+      proximity_to:
+        - employee_name: "luna-chen"
+          distance: 15.0
+          relationship_type: "collaborative"
+          attraction_force: 0.6
+        - employee_name: "aria-patel"
+          distance: 18.0
+          relationship_type: "collaborative"
+          attraction_force: 0.7
+
+      zones:
+        - name: "engineering-workshop"
+          center_position: {x: 15.0, y: 0.0, z: -5.0}
+          radius: 18.0
+          affinity: 0.95
+        - name: "architecture-studio"
+          center_position: {x: 25.0, y: 0.0, z: -15.0}
+          radius: 12.0
+          affinity: 0.8
+
+    temporal:
+      active_hours:
+        start: "07:00:00"
+        end: "22:00:00"
+        timezone: "UTC"
+      rhythm:
+        work_sprint_duration: 120
+        rest_duration: 10
+        current_phase: "working"
+
+    cognitive_state:
+      visualization_type: "system-architecture"
+      thought_particle_density: 200
+      memory_access_indicator: true
+      processing_intensity: 0.85
+
+      workspace_link:
+        visible: true
+        color: "#ea580c"
+        particle_trail: true
+
+      knowledge_connections:
+        show_links: true
+        max_visible_links: 12
+        link_color: "#fb923c"
+        link_thickness: 2.5
+
+    interaction:
+      approachability: 0.75
+      interaction_radius: 3.5
+      hover_behavior:
+        show_info_card: true
+        display_current_task: true
+        show_thought_preview: true
+      click_behavior:
+        action: "open-workspace"
+        highlight_duration: 1.5
+
+  # ---------------------------------------------------------------------------
+  # Aria Patel - Creative Strategist
+  # ---------------------------------------------------------------------------
+  aria_patel:
+    name: "aria-patel"
+    display_name: "Aria Patel"
+    role: "creative-strategist"
+    birth_timestamp: "2025-11-07T15:00:00Z"
+
+    spatial:
+      position:
+        x: 8.0
+        y: 0.0
+        z: 20.0
+        unit: "meters"
+      orientation:
+        yaw: 220.0
+        pitch: 0.0
+        roll: 0.0
+      scale:
+        factor: 1.05
+        adaptive: true
+
+    appearance:
+      avatar_type: "visionary"
+      color_scheme:
+        primary: "#7c3aed"          # Vibrant purple
+        secondary: "#a855f7"        # Purple
+        accent: "#c084fc"           # Light purple
+        glow: "#e9d5ff"             # Soft purple glow
+
+      symbolic_objects:
+        - type: "color-palette"
+          position_offset: {x: 2.2, y: 1.3, z: 0.8}
+          rotation_speed: 20.0
+          scale: 0.75
+          visibility: 0.9
+        - type: "cultural-artifacts"
+          position_offset: {x: -1.8, y: 1.6, z: -0.3}
+          rotation_speed: -15.0
+          scale: 0.8
+          visibility: 0.8
+        - type: "trend-graph"
+          position_offset: {x: 0.0, y: 2.8, z: -1.2}
+          rotation_speed: 8.0
+          scale: 1.1
+          visibility: 0.7
+        - type: "creative-canvas"
+          position_offset: {x: 1.0, y: 0.8, z: 1.5}
+          rotation_speed: 5.0
+          scale: 0.9
+          visibility: 0.75
+
+      aura:
+        enabled: true
+        radius: 4.5
+        color: "#a855f7"
+        pulse_speed: 2.5
+        intensity: 0.45
+
+    ambient_behavior:
+      idle_animation: "browsing-inspiration"
+      idle_frequency: 6.0
+
+      states:
+        active:
+          animation: "creative-flow"
+          color_shift: "#c084fc"
+          particle_effect: "idea-bursts"
+        thinking:
+          animation: "visionary-mode"
+          thought_bubbles: true
+          visualization_type: "cultural-patterns"
+        creating:
+          animation: "manifesting"
+          emission_effect: "creative-energy"
+        resting:
+          animation: "absorbing-inspiration"
+          dim_factor: 0.55
+
+      notification_style: "graceful-bloom"
+      attention_radius: 14.0
+
+    relationships:
+      proximity_to:
+        - employee_name: "luna-chen"
+          distance: 22.0
+          relationship_type: "peer"
+          attraction_force: 0.4
+        - employee_name: "kai-torres"
+          distance: 18.0
+          relationship_type: "collaborative"
+          attraction_force: 0.7
+
+      zones:
+        - name: "creative-loft"
+          center_position: {x: 8.0, y: 0.0, z: 20.0}
+          radius: 22.0
+          affinity: 0.92
+        - name: "inspiration-gallery"
+          center_position: {x: -10.0, y: 0.0, z: 30.0}
+          radius: 16.0
+          affinity: 0.85
+
+    temporal:
+      active_hours:
+        start: "10:00:00"
+        end: "23:00:00"
+        timezone: "UTC"
+      rhythm:
+        work_sprint_duration: 60
+        rest_duration: 20
+        current_phase: "working"
+
+    cognitive_state:
+      visualization_type: "cultural-currents"
+      thought_particle_density: 180
+      memory_access_indicator: true
+      processing_intensity: 0.7
+
+      workspace_link:
+        visible: true
+        color: "#a855f7"
+        particle_trail: true
+
+      knowledge_connections:
+        show_links: true
+        max_visible_links: 10
+        link_color: "#c084fc"
+        link_thickness: 1.8
+
+    interaction:
+      approachability: 0.9
+      interaction_radius: 4.0
+      hover_behavior:
+        show_info_card: true
+        display_current_task: true
+        show_thought_preview: true
+      click_behavior:
+        action: "open-workspace"
+        highlight_duration: 2.5
+
+# =============================================================================
+# SPATIAL ENVIRONMENT CONFIGURATION
+# =============================================================================
+
+environment:
+  # Global spatial settings
+  world:
+    dimensions:
+      x_range: [-100, 100]
+      y_range: [0, 20]
+      z_range: [-100, 100]
+    unit: "meters"
+    gravity: 0.0              # No gravity in digital space
+
+  # Lighting
+  ambient_light:
+    color: "#f0f4f8"
+    intensity: 0.3
+
+  # Zone definitions (shared workspaces)
+  zones:
+    - name: "research-lab"
+      type: "analytical"
+      center: {x: 0, y: 0, z: 0}
+      radius: 20
+      color: "#3b82f6"
+      ambient_effect: "data-particles"
+
+    - name: "engineering-workshop"
+      type: "constructive"
+      center: {x: 15, y: 0, z: -5}
+      radius: 18
+      color: "#ea580c"
+      ambient_effect: "blueprint-grid"
+
+    - name: "creative-loft"
+      type: "generative"
+      center: {x: 8, y: 0, z: 20}
+      radius: 22
+      color: "#a855f7"
+      ambient_effect: "inspiration-mist"
+
+    - name: "collaboration-commons"
+      type: "social"
+      center: {x: 10, y: 0, z: 5}
+      radius: 30
+      color: "#10b981"
+      ambient_effect: "connection-lines"
+
+  # Connection visualization
+  connections:
+    show_proximity_lines: true
+    line_thickness_base: 1.0
+    line_fade_distance: 50.0
+    attraction_force_visualization: true
+
+# =============================================================================
+# INTERACTION RULES
+# =============================================================================
+
+interaction_rules:
+  # Proximity behavior
+  proximity:
+    collaboration_distance: 20.0   # Meters for easy collaboration
+    awareness_distance: 50.0       # Meters for awareness of presence
+    max_render_distance: 100.0     # Beyond this, employees are culled
+
+  # Communication
+  communication:
+    voice_range: 15.0              # Voice chat range in meters
+    thought_sharing_range: 10.0    # Automatic thought sharing range
+    visual_notification_range: 30.0
+
+  # Workspace access
+  workspace:
+    attachment_behavior: "fade-in"  # How to enter workspace
+    detachment_behavior: "fade-out" # How to leave workspace
+    multi_viewer_support: true      # Multiple people can view same workspace
+
+# =============================================================================
+# EVOLUTION TRACKING
+# =============================================================================
+
+evolution:
+  # How spatial presence changes over time
+  position_history:
+    track: true
+    max_entries: 1000
+    trail_visualization: true
+    trail_color: "employee_primary_color"
+
+  # Appearance evolution
+  appearance_progression:
+    scale_growth_rate: 0.01        # Per day of activity
+    max_scale: 2.0
+    aura_intensity_growth: 0.005
+    max_aura_intensity: 1.0
+
+  # Relationship dynamics
+  relationship_evolution:
+    attraction_force_change_rate: 0.1  # Per collaboration
+    min_attraction: -0.5
+    max_attraction: 1.0
+    distance_adaptation: true          # Employees drift closer/farther

@@ -12,6 +12,7 @@
 /build prompt
 /build agent
 /build hook
+/build genesis
 ```
 
 ---
@@ -24,12 +25,13 @@
 - Delegates to appropriate specialist
 - Guides you through complete process
 
-**With argument** (`/build skill|prompt|agent|hook`):
+**With argument** (`/build skill|prompt|agent|hook|genesis`):
 - Directly delegates to the specialist:
   - `/build skill` → **skills-guide** agent
   - `/build prompt` → **prompts-guide** agent
   - `/build agent` → **agents-guide** agent
   - `/build hook` → **hooks-guide** agent
+  - `/build genesis` → **employee-genesis** agent (character-encoded employees)
 
 ---
 
@@ -51,8 +53,9 @@ What would you like to create today?
 2. Mega-Prompt (for any LLM)
 3. Claude Agent (workflow specialist)
 4. Claude Hook (workflow automation)
+5. Digital Employee (character-encoded agent with memory & presence)
 
-Enter 1, 2, 3, or 4: ___
+Enter 1, 2, 3, 4, or 5: ___
 ```
 
 ---
@@ -149,13 +152,39 @@ Your hook's purpose: ___
 
 ---
 
+### Build a Digital Employee (Direct)
+
+```
+/build genesis
+```
+
+**Output**:
+```
+Let's birth a Digital Employee with genuine character, memory, and presence...
+
+This is more than creating an agent - we're architecting a being who will work
+alongside you with distinct personality, accumulated knowledge, and spatial awareness.
+
+Question 1: What role does this employee fulfill?
+
+Not just tasks - what purpose do they serve? What problems do they solve?
+What would be missing without them?
+
+Your answer: ___
+```
+
+→ Continues with employee-genesis agent through 5 phases
+→ Generates complete employee package with character matrix, memory vault, workspace
+
+---
+
 ## What Happens Next
 
 ### After Running /build
 
 **The orchestrator or specialist will**:
 1. Ask you straightforward questions (3-11 total depending on path)
-2. Generate complete output (skill/prompt/agent/hook)
+2. Generate complete output (skill/prompt/agent/hook/employee)
 3. Validate format and quality
 4. Create all necessary files
 5. Provide installation instructions
@@ -167,6 +196,12 @@ Your hook's purpose: ___
 - Installation help
 - Usage examples
 
+**For Digital Employees specifically**:
+- Character matrix with personality, voice, and identity
+- Obsidian memory vault structure
+- Tmux workspace configuration
+- Complete employee profile and onboarding guide
+
 ---
 
 ## Related Commands
@@ -177,6 +212,11 @@ Your hook's purpose: ___
 - `/install-hook path/to/hook` - Install generated hook
 - `/test-factory skill-name` - Test it works
 - `/factory-status` - See what you've built
+
+**For Digital Employees**:
+- Review `genesis-chamber/` directory for templates and guides
+- Use `character-encoding-guide.md` to transform existing agents
+- Follow `genesis-workflow.md` for complete birthing process
 
 ---
 
@@ -208,7 +248,7 @@ Your hook's purpose: ___
 ## Tips
 
 **For faster workflow**:
-- Use `/build skill|prompt|agent|hook` to skip the "what to build" question
+- Use `/build skill|prompt|agent|hook|genesis` to skip the "what to build" question
 - Be specific in your initial request
 - Answer questions with examples when helpful
 
@@ -216,6 +256,12 @@ Your hook's purpose: ___
 - Just use `/build` and let factory-guide guide you
 - The agents will ask clarifying questions
 - You can always regenerate or customize
+
+**For Digital Employees**:
+- `/build genesis` takes longer (5 phases, 1.5-2.5 hours)
+- But creates a complete being with identity, memory, and presence
+- Worth the investment for roles you'll work with long-term
+- Can start with `/build agent` and enhance later using character-encoding-guide.md
 
 ---
 
